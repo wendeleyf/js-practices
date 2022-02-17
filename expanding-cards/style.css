@@ -37,6 +37,10 @@ body {
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-in;
+  filter: sepia(100%);
+}
+.panel:hover {
+  filter: none;
 }
 
 .panel h3 {
@@ -50,6 +54,11 @@ body {
 
 .panel.active {
   flex: 5;
+  filter: none;
+}
+
+.panel.active:hover {
+  filter: brightness(120%) saturate(150%);
 }
 
 .panel.active h3 {
