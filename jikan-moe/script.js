@@ -8,7 +8,7 @@ function searchAnime(){
   const form = new FormData(this);
   const query = form.get("search");
 
-  fetch(`${base_url}?q=${query}`)
+  fetch(`${base_url}?q=${query}&sfw=true`)
   .then(response => response.json())
   .then(updateDom)
   .catch(error=>console.warn(error.message));
@@ -26,11 +26,17 @@ function updateDom(results){
     }
     return `
     <div class="col">
-      <div class="card h-100">
+      <div class="anime-card card h-100">
           <img src="${anime.images.webp.large_image_url}" class="card-img-top">
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
           <h5 class="card-title">${anime.title}</h5>
           <p>${anime.synopsis}</p>
+          <div class="container p-0 m-0"
+            <div class="row">
+              <a href="detalhes.html?id=${anime.mal_id}" class="btn btn-outline-dark" target="_blank">Detalhes</a>
+              <a href="${anime.url}" class="btn btn-outline-dark" target="_blank">MAL</a>
+            </div>
+          </div>
       </div>
       </div>
       </div>
