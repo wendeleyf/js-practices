@@ -17,12 +17,11 @@ function pageLoad(){
 
 function updateDom(characters){
   console.log(characters)
-  const container = document.querySelector('.container');
+  const container = document.querySelector('.detail');
   container.innerHTML = characters.data
   .map(character => {
     return `
-      <h5>${character.character.name}</h5>
-      <img src="${character.character.images.webp.image_url}" />
+      <img src="${character.character.images.webp.image_url}" class="m-2"/>
     `
   }).join("")
 }
