@@ -19,10 +19,10 @@ function updateDom(results){
   const searchResults = document.querySelector('#anime-container');
   console.log(results.data)
   searchResults.innerHTML = results.data
-  .sort((a,b) => a.episodes-b.episodes)
+  .sort((a,b) => b.episodes-a.episodes)
   .map(anime=>{
     if(anime.synopsis && anime.synopsis.length > 300){
-      anime.synopsis = `${anime.synopsis.substring(0,300)}...`;
+      anime.synopsis = `${anime.synopsis.substring(0,350)}...`;
     }
     return `
     <div class="col">
@@ -33,8 +33,8 @@ function updateDom(results){
           <p>${anime.synopsis}</p>
           <div class="container p-0 m-0"
             <div class="row">
-              <a href="detalhes.html?id=${anime.mal_id}" class="btn btn-outline-dark" target="_blank">Detalhes</a>
-              <a href="${anime.url}" class="btn btn-outline-dark" target="_blank">MAL</a>
+              <a href="detalhes.html?id=${anime.mal_id}" class="btn anime-btn-detail" target="_blank">Detalhes</a>
+              <a href="${anime.url}" class="btn anime-btn-mal" target="_blank">MAL</a>
             </div>
           </div>
       </div>
