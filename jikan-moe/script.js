@@ -33,7 +33,7 @@ function updateDom(results){
           <p>${anime.synopsis}</p>
           <div class="container p-0 m-0"
             <div class="row">
-              <a href="detalhes.html?id=${anime.mal_id}" class="btn anime-btn-detail" target="_blank">Detalhes</a>
+              <a href="./info/detalhes.html?id=${anime.mal_id}" class="btn anime-btn-detail" target="_blank">Detalhes</a>
               <a href="${anime.url}" class="btn anime-btn-mal" target="_blank">MAL</a>
             </div>
           </div>
